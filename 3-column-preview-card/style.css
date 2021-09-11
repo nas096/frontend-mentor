@@ -3,16 +3,66 @@
 	--dark-cyan: hsl(184, 100%, 22%);
 	--very-dark-cyan: hsl(179, 100%, 13%);
 	/*(paragraphs)*/
-	--transparent-white: hsla(0, 0%, 100%, 0.75);
+	--transparent-white: #ffffffbf;
 	/* (background, headings, buttons)*/
-	--very-light-gray: hsl(0, 0%, 95%);
+	--very-light-gray: #f2f2f2;
 }
 
 * {
 	/*font-family*/
-	/* font-family: "Big Shoulders Display", cursive; */
 	font-family: "Lexend Deca", sans-serif;
+	margin: 0;
+	padding: 0;
 }
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+main {
+	display: flex;
+	margin: 10em 4em;
+	border-radius: 2rem;
+	flex-direction: row;
+}
+
+/*style general cards' styles*/
+
+.headings {
+	color: var(--very-light-gray);
+	text-transform: uppercase;
+	font-family: "Big Shoulders Display", cursive;
+}
+
+.description {
+	color: var(--transparent-white);
+}
+
+.button-learn-more {
+	width: 60%;
+	border-radius: 20px;
+	background-color: var(--very-light-gray);
+}
+
+/*customize each card*/
+/*sedans card*/
+.sedans {
+	background-color: var(--bright-orange);
+}
+
+/*suvs card*/
+.suvs {
+	background-color: var(--dark-cyan);
+}
+
+/*luxury cards*/
+.luxury {
+	background-color: var(--very-dark-cyan);
+}
+
 
 .attribution {
 	font-size: 11px;
