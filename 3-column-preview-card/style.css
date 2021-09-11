@@ -3,9 +3,9 @@
 	--dark-cyan: hsl(184, 100%, 22%);
 	--very-dark-cyan: hsl(179, 100%, 13%);
 	/*(paragraphs)*/
-	--transparent-white: #ffffffbf;
+	--transparent-white: hsla(0, 0%, 100%, 0.749);
 	/* (background, headings, buttons)*/
-	--very-light-gray: #f2f2f2;
+	--very-light-gray: hsl(0, 0%, 95%);
 }
 
 * {
@@ -13,6 +13,7 @@
 	font-family: "Lexend Deca", sans-serif;
 	margin: 0;
 	padding: 0;
+	box-sizing: content-box;
 }
 
 body {
@@ -20,16 +21,20 @@ body {
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+	overflow: auto;
+	height: auto;
+	background-color: var(--very-light-gray);
 }
 
 main {
 	display: flex;
-	margin: 10em 4em;
-	border-radius: 2rem;
+	margin: 10em 19em;
 	flex-direction: row;
+	border-radius: 15px;
+	overflow: hidden;
 }
 
-/*style general cards' styles*/
+/*! style general cards' styles*/
 
 .headings {
 	color: var(--very-light-gray);
@@ -41,16 +46,38 @@ main {
 	color: var(--transparent-white);
 }
 
-.button-learn-more {
-	width: 60%;
-	border-radius: 20px;
-	background-color: var(--very-light-gray);
+main > * {
+	padding-right: 2rem;
+	padding-bottom: 3rem;
+	flex: 1;
 }
 
-/*customize each card*/
+/*! customize each card*/
 /*sedans card*/
 .sedans {
 	background-color: var(--bright-orange);
+}
+
+.card-icon.icon-sedans {
+	background-image: url("images/icon-sedans.svg");
+	background-position: left;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 3em;
+}
+
+.sedans .button-learn-more {
+	color: var(--bright-orange);
+}
+
+.sedans .button-learn-more:hover {
+	color: white;
+	background-color: var(--bright-orange);
+}
+
+.sedans > * {
+	margin-left: 3rem;
+	margin-top: 2.5rem;
 }
 
 /*suvs card*/
@@ -58,12 +85,66 @@ main {
 	background-color: var(--dark-cyan);
 }
 
+.card-icon.icon-suvs {
+	background-image: url("images/icon-suvs.svg");
+	background-position: left;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 3em;
+}
+
+.suvs .button-learn-more {
+	color: var(--dark-cyan);
+}
+
+.suvs .button-learn-more:hover {
+	color: white;
+	background-color: var(--dark-cyan);
+}
+
+.suvs > * {
+	margin-left: 3rem;
+	margin-top: 2.5rem;
+}
 /*luxury cards*/
 .luxury {
 	background-color: var(--very-dark-cyan);
 }
 
+.card-icon.icon-luxury {
+	background-image: url("images/icon-luxury.svg");
+	background-position: left;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 3em;
+}
 
+.luxury .button-learn-more {
+	color: var(--very-dark-cyan);
+}
+
+.luxury .button-learn-more:hover {
+	color: white;
+	background-color: var(--very-dark-cyan);
+}
+
+.luxury > * {
+	margin-left: 3rem;
+	margin-top: 2.5rem;
+}
+
+/*general buttons*/
+
+.button-learn-more {
+	width: 10em;
+	border-radius: 20px;
+	background-color: var(--very-light-gray);
+	height: 3em;
+	cursor: pointer;
+	border: 2px solid white;
+	margin-top: 8rem;
+}
+/*attribution*/
 .attribution {
 	font-size: 11px;
 	text-align: center;
@@ -71,4 +152,21 @@ main {
 
 .attribution a {
 	color: hsl(228, 45%, 44%);
+}
+
+@media screen and (max-width: 660px) {
+	main {
+		flex-direction: column;
+		margin: 4rem 1rem;
+		padding: 0;
+		border-radius: 0;
+	}
+
+	main > * {
+		width: 100%;
+	}
+
+	.button-learn-more {
+		margin-top: 2rem;
+	}
 }
