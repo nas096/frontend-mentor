@@ -44,6 +44,7 @@ main {
 
 .description {
 	color: var(--transparent-white);
+	margin-bottom: 5rem;
 }
 
 main > * {
@@ -142,7 +143,7 @@ main > * {
 	height: 3em;
 	cursor: pointer;
 	border: 2px solid white;
-	margin-top: 8rem;
+	/* margin-top: 5rem; */
 }
 /*attribution*/
 .attribution {
@@ -169,4 +170,11 @@ main > * {
 	.button-learn-more {
 		margin-top: 2rem;
 	}
+}
+
+@media screen and (min-width: 661px) {
+	.luxury .description {
+		margin-bottom: 60px;
+	}
+	
 }
